@@ -93,27 +93,32 @@ NOTE: hq param name in binExpand_overlap_le must stay `hq` (renaming broke refs)
 
 
 ## Ledger pointer
-x1 COMMITTED (score 8.73/10): capacity=1.0 noise=0.683 thr=1.0 lean=1.0.
-Headline: eta=20% → NSSC perfect (recall 1.0, wrong=0 @ M=10^5) vs SDR collapse
-(recall 0.32, wrong 35%); algebraic decode 77x faster than scan at M=10^5 (O(1)
-vs O(M)); purity audit 5042 instrs 0 mul/div/float; Lean 7 theorems no sorryAx.
+x1 8.73 → x2 (brain loop) → x3 9.53 (M=10^6 frontier, 956x decode) → x4 10.00
+(nested category ladder: exact→category→unknown, zero wrong at every level;
+rand_below RNG fix). All gates green: purity 0 mul/div/float, selftest ALL PASS,
+brain demo ALL PASS, Lean no sorryAx.
 
-## Next steps (x2+ hypothesis queue, priority order)
-1. [PENDING] Capacity frontier at larger M (10^6) + larger n variant (n=8192,q=256,
-   N=32,K=16 vs matched SDR) — confirm SDR usable-M stays tiny while NSSC scales.
-2. [PENDING] Adversarial differentiation at larger M: SDR max-intersection grows
-   with M (birthday tail), NSSC capped at K-1 forever. Sweep M to 10^6 and show
-   adversarial breakpoint divergence (coarse step-4 sweep at small M showed parity).
-3. [PENDING] Whole-brain loop demo module (thalamic gate, hippocampal index store/
-   cleanup via certified decoder, BG WTA tournament, cerebellar delay lines,
-   reticular gain). Demo task: noisy cue → sequence completion with routing.
-4. [PENDING] Nested refinement fields (coarse/mid/fine consistent levels) — the
-   "progressive disclosure under noise" claim; needs design care (naive splitting
-   LOSES — must add consistency constraints, e.g., fine symbols constrained by
-   coarse identity via per-bucket sub-codes).
-5. [STRETCH] Lean: formalize GF(2^m) + RS distance itself (remove the machine-
-   checked-by-C++ hypothesis on hagree).
-6. Docs: README with results tables; research notes cross-links.
+## Next steps (x5+ hypothesis queue)
+1. Supervisor checkpoint DUE (4 commits; long session).
+2. Adversarial differentiation at scale: SDR max-intersection grows with M
+   (birthday tail) vs NSSC capped at K-1 — sweep M to 3e6+ or use denser codes
+   to make tails bite; current small-M sweeps show parity.
+3. Lean stretch: formalize GF(2^m)+RS distance to remove the C++-checked
+   hypothesis on hagree (binary_dictionary_certified premise).
+4. Role binding demo (rotation composition from binding_overlap_split) in the
+   brain loop — currently only used inside Hippocampus.
+5. Docs: wire research notes citations into design.md tables (partially done).
+
+## Scorer honesty records (supervisor mandate)
+- capacity_score is FORMULA-DERIVED (reads CAP line log10M/6): 10.00 must never
+  be read as an empirical >10^84 capacity demonstration.
+- ANTI-INCENTIVE: noise score requires SDR served60<=10% — points accrue partly
+  from baseline failure. Any scorer edit must keep an absolute-performance term.
+- H1's adversarial clause UNVERIFIED at scale (small-M parity observed); x4
+  rewrote the scorer in the same commit that introduced the capability it
+  scores. Future rule: separate metric-contract changes from capability commits.
+- Preserve honesty record: phantom-flood 3.3% wrong outside certified radius is
+  reported; ties->unknown decoder; matched-geometry policy per experiment.
 
 ## Environment quirks / gotchas (do not rediscover)
 - exp_t/log conventions: codeword symbol j has degree N-1-j (HIGH-FIRST layout);
