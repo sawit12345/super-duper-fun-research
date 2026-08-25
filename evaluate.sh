@@ -59,7 +59,7 @@ noise = 0.0
 rows = re.findall(r'UNI,M=(\d+),eta=20,NSSC recall=([\d.]+) wrong=([\d.e+-]+).*SDR recall=([\d.]+) wrong=([\d.e+-]+)', log)
 biggest = None
 for M, rn, wn, rs_, ws in rows:
-    if int(M) == 100000:
+    if int(M) == 1000000:
         biggest = (float(rn), float(wn), float(rs_), float(ws))
 if biggest:
     rn, wn, rs_, ws = biggest
@@ -75,8 +75,8 @@ for M, blk in re.findall(r'UNI,M=(\d+),eta=20,(.*)', log):
 cap = 1.0 if sdr_ok == 0 else min(1.0, math.log10(max(nssc_ok, 1) / sdr_ok) / 3.0)
 
 # --- throughput score: algebraic vs scan speedup at M=100000 ---
-m = re.search(r'THR,M=100000,.*speedup=([\d.]+)x', log)
-thr = min(1.0, float(m.group(1)) / 50.0) if m else 0.0
+m = re.search(r'THR,M=1000000,.*speedup=([\d.]+)x', log)
+thr = min(1.0, float(m.group(1)) / 500.0) if m else 0.0
 
 lean = float(os.environ.get('LEAN_OK', '0'))
 score = 4 * cap + 4 * noise + 1 * thr + 1 * lean

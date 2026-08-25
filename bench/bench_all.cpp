@@ -101,7 +101,7 @@ int main(int argc, char**) {
     const unsigned TRIALS = 300;
 
     // -------------------------------------------------- build dictionaries --
-    std::vector<unsigned> Ms = {1000, 10000, 100000};
+    std::vector<unsigned> Ms = {1000, 10000, 100000, 1000000};
     for (unsigned M : Ms) {
         Dictionary dn, ds;
         dn.alloc(M, n / 64);
