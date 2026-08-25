@@ -93,21 +93,20 @@ NOTE: hq param name in binExpand_overlap_le must stay `hq` (renaming broke refs)
 
 
 ## Ledger pointer
-x1 8.73 → x2 (brain loop) → x3 9.53 (M=10^6 frontier, 956x decode) → x4 10.00
-(nested category ladder: exact→category→unknown, zero wrong at every level;
-rand_below RNG fix). All gates green: purity 0 mul/div/float, selftest ALL PASS,
-brain demo ALL PASS, Lean no sorryAx.
+x1 8.73 → x2 brain loop → x3 9.53 → x4 10.00(v1) → x5 7.54 under scorer v2.
+Supervisor review executed: adversarial clause DEMOTED (negative result:
+birthday tails never bite at SDR sparsity within M<=1e6; margins flat ~49-52
+both systems); scorer v2 = hard gates + open axes (A scale /3, B binding /2,
+C ladder /2, D throughput /1, E lean-GF-RS /2 currently 0). All gates green.
 
-## Next steps (x5+ hypothesis queue)
-1. Supervisor checkpoint DUE (4 commits; long session).
-2. Adversarial differentiation at scale: SDR max-intersection grows with M
-   (birthday tail) vs NSSC capped at K-1 — sweep M to 3e6+ or use denser codes
-   to make tails bite; current small-M sweeps show parity.
-3. Lean stretch: formalize GF(2^m)+RS distance to remove the C++-checked
-   hypothesis on hagree (binary_dictionary_certified premise).
-4. Role binding demo (rotation composition from binding_overlap_split) in the
-   brain loop — currently only used inside Hippocampus.
-5. Docs: wire research notes citations into design.md tables (partially done).
+## Next steps (x6+ queue)
+1. Axis A improvement: scale-demo recall at exactly e* is 0.847 (boundary
+   effects: silent corruptions + E=D edge). Options: report at e*/2 as primary,
+   or add list-decode retry, or grow D. Target axisA >= 0.95.
+2. Axis E: formalize GF(2^m) + RS minimum distance in Lean (removes the C++-
+   checked hagree premise). Big but well-scoped; Mathlib has polynomial rings.
+3. Optional: wire role-binding slices into hippocampus (replace ad-hoc
+   rotations) so the demo matches the proven lemma hypotheses exactly.
 
 ## Scorer honesty records (supervisor mandate)
 - capacity_score is FORMULA-DERIVED (reads CAP line log10M/6): 10.00 must never
