@@ -93,4 +93,35 @@ NOTE: hq param name in binExpand_overlap_le must stay `hq` (renaming broke refs)
 
 
 ## Ledger pointer
-See .avo/lineage/LEDGER.md (currently empty — no commits yet).
+x1 COMMITTED (score 8.73/10): capacity=1.0 noise=0.683 thr=1.0 lean=1.0.
+Headline: eta=20% → NSSC perfect (recall 1.0, wrong=0 @ M=10^5) vs SDR collapse
+(recall 0.32, wrong 35%); algebraic decode 77x faster than scan at M=10^5 (O(1)
+vs O(M)); purity audit 5042 instrs 0 mul/div/float; Lean 7 theorems no sorryAx.
+
+## Next steps (x2+ hypothesis queue, priority order)
+1. [PENDING] Capacity frontier at larger M (10^6) + larger n variant (n=8192,q=256,
+   N=32,K=16 vs matched SDR) — confirm SDR usable-M stays tiny while NSSC scales.
+2. [PENDING] Adversarial differentiation at larger M: SDR max-intersection grows
+   with M (birthday tail), NSSC capped at K-1 forever. Sweep M to 10^6 and show
+   adversarial breakpoint divergence (coarse step-4 sweep at small M showed parity).
+3. [PENDING] Whole-brain loop demo module (thalamic gate, hippocampal index store/
+   cleanup via certified decoder, BG WTA tournament, cerebellar delay lines,
+   reticular gain). Demo task: noisy cue → sequence completion with routing.
+4. [PENDING] Nested refinement fields (coarse/mid/fine consistent levels) — the
+   "progressive disclosure under noise" claim; needs design care (naive splitting
+   LOSES — must add consistency constraints, e.g., fine symbols constrained by
+   coarse identity via per-bucket sub-codes).
+5. [STRETCH] Lean: formalize GF(2^m) + RS distance itself (remove the machine-
+   checked-by-C++ hypothesis on hagree).
+6. Docs: README with results tables; research notes cross-links.
+
+## Environment quirks / gotchas (do not rediscover)
+- exp_t/log conventions: codeword symbol j has degree N-1-j (HIGH-FIRST layout);
+  syndrome t evaluates at alpha^{t+1}; generator roots alpha^1..alpha^D.
+- exp_t(i) valid only for i < 2(q-1) (single subtract fold).
+- NsscSpace ctor: rs member init-list dummy RS(2,1) then reassign in body (RS(1,1)
+  trips assert). N computed by shift AFTER l2q loop.
+- decode_erasure mat stride is MAT_STRIDE=2048 pow2 (purity: no imul-by-odd).
+- evaluate.sh parses bench.log regexes — keep UNI/IXN/ADV/THR/CAP line formats.
+- purity audit: strip jump-target symbol names before grepping mnemonics.
+
