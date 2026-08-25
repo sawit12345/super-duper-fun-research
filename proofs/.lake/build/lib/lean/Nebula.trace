@@ -1,0 +1,62 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["bafbb3edac9adac8.olean"],
+  "m": false,
+  "i": "42d476a0c35866ae.ilean",
+  "c": "2e214ac84fd15313.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/Cli/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/batteries/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/Qq/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/aesop/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/importGraph/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/plausible/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/packages/mathlib/.lake/build/lib/lean:/home/runner/repos/super-duper-fun-research/proofs/.lake/build/lib/lean /home/runner/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean /home/runner/repos/super-duper-fun-research/proofs/Nebula.lean -o /home/runner/repos/super-duper-fun-research/proofs/.lake/build/lib/lean/Nebula.olean -i /home/runner/repos/super-duper-fun-research/proofs/.lake/build/lib/lean/Nebula.ilean -c /home/runner/repos/super-duper-fun-research/proofs/.lake/build/ir/Nebula.c --setup /home/runner/repos/super-duper-fun-research/proofs/.lake/build/ir/Nebula.setup.json --json",
+   "level": "trace"},
+  {"message":
+   "Nebula.lean:466:33: Variable name `q` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _q\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+   "level": "warning"},
+  {"message":
+   "Nebula.lean:481:0: 'Nebula.certified_unique_decode' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "Nebula.lean:482:0: 'Nebula.certified_decode_correct' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "Nebula.lean:483:0: 'Nebula.binExpand_overlap_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "Nebula.lean:484:0: 'Nebula.binary_dictionary_certified' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "Nebula.lean:485:0: 'Nebula.packing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "Nebula.lean:486:0: 'Nebula.binding_overlap_split' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"},
+  {"message":
+   "Nebula.lean:487:0: 'Nebula.ks_capacity_formula' depends on axioms: [propext, Classical.choice, Quot.sound]",
+   "level": "info"}],
+ "inputs":
+ [["deps",
+   [["nebula/Nebula:extraDep", [["@nebula:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["Mathlib.Tactic transitive imports (legacy)", "5b6be3777405fdea"],
+      ["Mathlib.Tactic:importAllArts", "49193de2eba247db"],
+      ["Mathlib.Data.Nat.Choose.Basic transitive imports (legacy)",
+       "26875c8a88fb857c"],
+      ["Mathlib.Data.Nat.Choose.Basic:importAllArts", "8b3ce1297289ee46"],
+      ["Mathlib.Data.Nat.ModEq transitive imports (legacy)",
+       "ca63e4895d3c0ec6"],
+      ["Mathlib.Data.Nat.ModEq:importAllArts", "d97575a20d7b63ef"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.0, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d",
+   "365244c167ac8c1d"],
+  ["/home/runner/repos/super-duper-fun-research/proofs/Nebula.lean",
+   "f7054f3f55f55b5d"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: Nebula", "9bfbbbd130482828"],
+  ["Package.id?: (some nebula)", "6cb55a8212a31ef8"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "67d65b1191116b86"}

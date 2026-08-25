@@ -1,0 +1,11 @@
+name = "nebula"
+version = "0.1.0"
+defaultTargets = ["Nebula"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "master"
+
+[[lean_lib]]
+name = "Nebula"
